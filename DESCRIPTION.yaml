@@ -9,7 +9,6 @@ meta:
   display      : demo
   author       : Graham.Williams@togaware.com
   filename     : pool/main/b/barchart/barchart_1.1.8.mlm
-  date         : 2018-11-09 17:28:44
 commands:
   demo  : Step through alternative options for barcharts.
   print : Display the code used for the demo.
