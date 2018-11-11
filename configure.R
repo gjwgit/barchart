@@ -5,19 +5,27 @@
 
 # Use atril to display PDF files.
 
-cat("Install system dependencises if needed...\n atril\n\n")
+cat("Install system dependencies if needed...\n atril\n\n")
 system("sudo apt-get install -y atril", ignore.stderr=TRUE, ignore.stdout=TRUE)
 
-# Identify the required packages. Remove rattle.data eventually as
-# datasets moved back into rattle. 20180918.
+# Identify the required packages.
 
 packages <- c("magrittr", "rpart", "RColorBrewer", "rattle",
-              "rattle.data", "ggplot2", "randomForest", "scales",
+              "ggplot2", "randomForest", "scales",
               "stringi")
 
 # Determine which need to be installed.
 
 install  <- packages[!(packages %in% installed.packages()[,"Package"])]
+
+# Report on what is already installed.
+
+already <- setdiff(packages, install)
+if (length(already))
+{
+    cat("The following required R packages are already installed:\n",
+        paste(already, collapse=" "))
+}
 
 # Identify where they will be installed - the user's local R library.
 
@@ -33,8 +41,5 @@ if (length(install))
 {
   cat(sprintf("\nInstalling '%s' into '%s'...", paste(install, collapse="', '"), lib))
   install.packages(install, lib=lib)
-} else
-{
-  cat("\nNo additional generic R packages need to be installed.")
-}
+} 
 cat("\n")

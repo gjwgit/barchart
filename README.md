@@ -12,6 +12,9 @@ Science](https://bit.ly/essentials_data_science) by Graham Williams.
 Further support material is also available from
 [Togaware](https://essentials.togaware.com).
 
+Visit the github repository for more details:
+https://github.com/gjwgit/barchart
+
 Usage
 -----
 

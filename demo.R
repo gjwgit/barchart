@@ -1,16 +1,29 @@
 ########################################################################
-# Introduce the concept of bar charts through MLHub
+# Introduce the concept of bar charts through MLHub.
 #
 # Copyright 2018 Graham.Williams@togaware.com
 
-#-----------------------------------------------------------------------
-# Load required packages from local library into the R session.
-#-----------------------------------------------------------------------
+cat("=====================================
+Introducing Bar Charts with R ggplot2
+=====================================
+
+The Australian weather dataset from the Rattle package (from R)
+is used to illustrate bar charts.
+
+These examples come from the book, Essentials of Data Science,
+by Graham Williams. Used with permission.
+Visit https://essentials.togaware.com for more details.
+
+Press the <Enter> key after each message to display the referenced plot.
+Close the graphic windows using Ctrl-W
+
+")
+
+# Load required packages.
 
 suppressMessages(
 {
 library(magrittr)     # Data pipelines: %>% %<>% %T>% equals().
-library(rattle.data)  # Until rattle is updated on DSVM.
 library(rattle)       # Support: normVarNames(), weatherAUS. 
 library(ggplot2)      # Visualise data.
 library(dplyr)        # Wrangling: tbl_df(), group_by(), print().
@@ -20,19 +33,9 @@ library(scales)       # Include commas in numbers.
 library(stringi)      # String concat operator %s+%.
 })
 
-cat("\n=====================================",
-    "\nIntroducing Bar Charts with R ggplot2",
-    "\n=====================================\n\n")
+# Colour blind friendly palette:
 
-cat("The Australian weather dataset from the Rattle package (from R)\n")
-cat("is used to illustrate bar charts.\n\n")
-
-cat("These examples come from the book, Essentials of Data Science,\n")
-cat("by Graham Williams. Used with permission.\n")
-cat("Visit https://essentials.togaware.com for more details.\n\n")
-
-cat("Press the <Enter> key after each message to display the referenced plot.\n")
-cat("Close the graphic window (Ctrl-W) to continue on to the next plot.\n\n")
+cb <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 
 #-----------------------------------------------------------------------
 # Prepare the Weather dataset.
@@ -44,7 +47,9 @@ invisible(readChar("stdin", 1))
 dsname <- "weatherAUS"
 ds     <- get(dsname)
 
+#-----------------------------------------------------------------------
 # Cleanup the dataset.
+#-----------------------------------------------------------------------
 
 names(ds) %<>% normVarNames()
 
@@ -58,7 +63,9 @@ vars   <- setdiff(vars, ignore)
 
 ds[vars] %<>% na.roughfix()
 
+#-----------------------------------------------------------------------
 # Template variables for the plots.
+#-----------------------------------------------------------------------
 
 xv   <- "wind_dir_3pm"
 fill <- "rain_tomorrow"
@@ -88,7 +95,8 @@ pdf(file=fname, width=8)
 ds %>%
   ggplot(aes_string(x=xv, fill=fill)) +
   scale_y_continuous(labels=comma) +
-  geom_bar()
+  geom_bar() +
+  scale_fill_brewer(palette="Paired")
 invisible(dev.off())
 system(sprintf("atril --preview %s", fname), ignore.stderr=TRUE, wait=FALSE)
 
@@ -102,9 +110,10 @@ invisible(readChar("stdin", 1))
 fname <- "weather_bar_dodged.pdf"
 pdf(file=fname, width=8)
 ds %>%
-  ggplot(aes(x=xv, fill=fill)) +
+  ggplot(aes_string(x=xv, fill=fill)) +
   scale_y_continuous(labels=comma) +
-  geom_bar(position="dodge")
+  geom_bar(position="dodge") +
+  scale_fill_brewer(palette="Paired")
 invisible(dev.off())
 system(sprintf("atril --preview %s", fname), ignore.stderr=TRUE, wait=FALSE)
 
@@ -127,10 +136,10 @@ pdf(file=fname, width=8)
 ds %>%
   ggplot(aes_string(x=xv, fill=fill)) +
   geom_bar(position="dodge") +
-  scale_fill_manual(values = blues2,
+  scale_fill_brewer(palette="Paired",
                     labels = c("No Rain", "Rain")) +
   scale_y_continuous(labels=comma) +
-  theme(legend.position   = c(.85, .95),
+  theme(legend.position   = c(.75, .95),
         legend.direction  = "horizontal",
         legend.title      = element_text(colour="grey40"),
         legend.text       = element_text(colour="grey40"),
@@ -143,3 +152,6 @@ ds %>%
        fill     = "Tomorrow")
 invisible(dev.off())
 system(sprintf("atril --preview %s", fname), ignore.stderr=TRUE, wait=FALSE)
+
+cat("\nPress Enter to finish the demonstration: ")
+invisible(readChar("stdin", 1))
