@@ -1,0 +1,17 @@
+meta:
+  name         : barchart
+  title        : Demonstrate the concept of barcharts.
+  keywords     : graphics, visualisation, plot, bar chart, basics
+  version      : 2.0.0
+  languages    : R
+  display      : demo
+  license      : gpl3
+  author       : Graham.Williams@togaware.com
+  url          : https://github.com/gjwgit/barchart
+dependencies:
+  system : atril
+  cran   : rpart, magrittr, rpart.plot, RColorBrewer, rattle, ggplot2,
+  	   randomForest, scales, stringi
+commands:
+  demo  : Step through alternative options for barcharts.
+  print : Display the code used for the demo.
