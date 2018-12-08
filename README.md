@@ -20,7 +20,7 @@ Usage
 
 To install and run the package:
 
-    $ pip install mlhub
-    $ ml install barchart
+    $ pip3 install mlhub
+    $ ml install   barchart
     $ ml configure barchart
-    $ ml demo barchart
+    $ ml demo      barchart
