@@ -10,8 +10,7 @@ meta:
   url          : https://github.com/gjwgit/barchart
 dependencies:
   system : atril
-  cran   : rpart, magrittr, rpart.plot, RColorBrewer, rattle, ggplot2,
-  	   randomForest, scales, stringi
+  cran   : rpart, magrittr, rpart.plot, RColorBrewer, rattle, ggplot2, randomForest, scales, stringi
 commands:
   demo  : Step through alternative options for barcharts.
   print : Display the code used for the demo.
