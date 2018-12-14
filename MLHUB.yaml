@@ -9,6 +9,7 @@ meta:
   license      : gpl3
   author       : Graham.Williams@togaware.com
   url          : https://github.com/gjwgit/barchart
+  filename     : pool/main/b/barchart/barchart_2.0.0.mlm
 dependencies:
   system : atril
   cran   : rpart, magrittr, rpart.plot, RColorBrewer, rattle, ggplot2, randomForest, scales, stringi
