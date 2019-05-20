@@ -18,23 +18,28 @@ These examples come from the book, Essentials of Data Science,
 by Graham Williams. Used with permission.
 Visit https://essentials.togaware.com for more details.")
 
-# Load required packages.
+#-----------------------------------------------------------------------
+# Load required packages from local library into the R session.
+#-----------------------------------------------------------------------
 
 suppressMessages(
 {
-library(magrittr)     # Data pipelines: %>% %<>% %T>% equals().
-library(rattle)       # Support: normVarNames(), weatherAUS. 
-library(ggplot2)      # Visualise data.
-library(dplyr)        # Wrangling: tbl_df(), group_by(), print().
-library(randomForest) # Model: randomForest() na.roughfix() for missing data.
-library(RColorBrewer) # Choose different colors.
-library(scales)       # Include commas in numbers.
-library(stringi)      # String concat operator %s+%.
+  library(magrittr)     # Data pipelines: %>% %<>% %T>% equals().
+  library(rattle)       # Support: normVarNames(), weatherAUS. 
+  library(ggplot2)      # Visualise data.
+  library(dplyr)        # Wrangling: tbl_df(), group_by(), print().
+  library(randomForest) # Model: randomForest() na.roughfix() missing data.
+  library(RColorBrewer) # Choose different colors.
+  library(scales)       # Include commas in numbers.
+  library(stringi)      # String concat operator %s+%.
 })
 
+#-----------------------------------------------------------------------
 # Colour blind friendly palette:
+#-----------------------------------------------------------------------
 
-cb <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+cb <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442",
+        "#0072B2", "#D55E00", "#CC79A7")
 
 #-----------------------------------------------------------------------
 # Prepare the Weather dataset.
