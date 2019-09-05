@@ -6,16 +6,13 @@
 library(mlhub)
 
 mlcat("Introducing Bar Charts with R ggplot2",
-"The Australian weather dataset from the Rattle package (from R) is used
-to illustrate bar charts. The ggplot2 package is installed and loaded into
-R with:
+      "The Australian weather dataset from the Rattle package
+(https://rattle.togaware.com) is used to illustrate bar
+charts. The ggplot2 package provides the platform for
+all of our plotting needs.
 
-  install.packages(c('rattle', 'ggplot2'))
-  library(rattle)
-  library(ggplot2)
-
-These examples come from the book, Essentials of Data Science,
-by Graham Williams. Used with permission.
+The examples we will use here come from the book,
+Essentials of Data Science, by Graham Williams.
 Visit https://essentials.togaware.com for more details.")
 
 #-----------------------------------------------------------------------
