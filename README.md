@@ -1,13 +1,12 @@
-Visualise Data Through Barcharts
-================================
+# Visualise Data Through Barcharts
 
-This [MLHub](https://mlhub.ai) package provides a simple demonstration
-"model" showing the concept of bar charts. This is useful for the new
-data scientist learning the power of visualising data. Barcharts are one
-simple yet effective approach to understanding the narrative the data
-can tell us.
+Barcharts are a simple yet effective approach to understanding the
+narrative the data can tell us.  This [MLHub](https://mlhub.ai)
+package provides a simple demonstration illustrating the concept of
+bar charts. This is useful for the new data scientist learning the
+power of visualising data.
 
-The examples come from the [Essentials of Data
+The examples here come from the [Essentials of Data
 Science](https://bit.ly/essentials_data_science) by Graham Williams.
 Further support material is also available from
 [Togaware](https://essentials.togaware.com).
@@ -15,12 +14,29 @@ Further support material is also available from
 Visit the github repository for more details:
 https://github.com/gjwgit/barchart
 
-Usage
------
+## Quick Start Command Line Examples
 
-To install and run the package:
+```console
+$ ml demo barchart
+```
 
-    $ pip3 install mlhub
-    $ ml install   barchart
-    $ ml configure barchart
-    $ ml demo      barchart
+## Usage
+
+- To install mlhub (Ubuntu)
+
+```console
+$ pip3 install mlhub
+```
+
+- To install and configure the pre-built model:
+
+```console
+$ ml install   barchart
+$ ml configure barchart
+```
+
+## Demonstration
+
+```console
+$ ml demo barchart
+```
