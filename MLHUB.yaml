@@ -3,7 +3,7 @@ meta:
   name         : barchart
   title        : Demonstrate the concept of barcharts.
   keywords     : graphics, visualisation, plot, bar chart, introductory
-  version      : 2.0.1
+  version      : 2.0.2
   languages    : R
   display      : demo
   license      : gpl3
